@@ -17,20 +17,20 @@
 
 window.findNRooksSolution = function(n) {
   var solution = new Board({n: n}); //fixme
-  solution.n = 0;
   for (var i = 0; i < solution.attributes.n; i++) {
     solution.togglePiece(i,i);
-    solution.n++
   }
   console.log('Single solution for ' + n + ' rooks:', JSON.stringify(solution));
-  console.log(solution)
-  return solution;
+  return solution.rows();
 };
 
 // return the number of nxn chessboards that exist, with n rooks placed such that none of them can attack each other
 window.countNRooksSolutions = function(n) {
-  var solutionCount = undefined; //fixme
-
+  const factorial = function(n) {
+    if (n === 0) return 1;
+    return factorial(n - 1) * n;
+  }
+  let solutionCount = factorial(n);
   console.log('Number of solutions for ' + n + ' rooks:', solutionCount);
   return solutionCount;
 };
