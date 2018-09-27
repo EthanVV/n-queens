@@ -199,12 +199,24 @@
         if (this.hasMinorDiagonalConflictAt((this.attributes.n - 1),y)) return true;
       }
       return false; // fixme
-    }
+    },
 
     /*--------------------  End of Helper Functions  ---------------------*/
-
-
+    // Custom Helper
+    numPieces: function() {
+      let count = 0;
+      for (let y = 0; y < this.attributes.n - 1; y++) {
+        for (let x = 0; x < this.attributes.n - 1; x++) {
+          if (this.attributes[y][x]) count++;
+        }
+      }
+      return count;
+    }
+    
   });
+
+    // Custom Helper
+  
 
   var makeEmptyMatrix = function(n) {
     return _(_.range(n)).map(function() {

@@ -45,7 +45,18 @@ window.findNQueensSolution = function(n) {
 
 // return the number of nxn chessboards that exist, with n queens placed such that none of them can attack each other
 window.countNQueensSolutions = function(n) {
-  var solutionCount = undefined; //fixme
+  /*
+  * 
+  */ 
+  let solutionCount = 0;
+  let solutionBoards = [];
+
+  let testBoard = new Board(n);
+  for (let y = 0; y < testBoard.attributes.n - 1; y++) {
+    for (let x = 0; x < testBoard.attributes.n - 1; x++) {
+      testBoard.togglePiece(x,y);
+    }
+  }
 
   console.log('Number of solutions for ' + n + ' queens:', solutionCount);
   return solutionCount;
