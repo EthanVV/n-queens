@@ -215,7 +215,6 @@
     
   });
 
-    // Custom Helper
   
 
   var makeEmptyMatrix = function(n) {
